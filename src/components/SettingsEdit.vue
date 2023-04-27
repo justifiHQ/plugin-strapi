@@ -10,6 +10,16 @@
                 @update:modelValue="saveUrl"
             />
         </wwEditorFormRow>
+        <wwEditorFormRow required label="API Key">
+                <wwEditorInputText
+                    type="password"
+                    name="apikey"
+                    placeholder="**************"
+                    :model-value="settings.privateData.apikey"
+                    large
+                    @update:modelValue="saveKey"
+                />
+            </wwEditorFormRow>
     </div>
 </template>
 
@@ -22,6 +32,9 @@ export default {
     methods: {
         saveUrl(value) {
             this.setPrivateProp('url', value.trim().replace(/\/+$/g, ''));
+        },
+        saveKey(value){
+            this.setPrivateProp('apikey', value.trim());
         },
         setPrivateProp(key, value) {
             this.$emit('update:settings', {

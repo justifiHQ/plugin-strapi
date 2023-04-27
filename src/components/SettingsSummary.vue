@@ -3,6 +3,7 @@
         <wwEditorIcon name="link" class="strapi-settings-summary__icon"></wwEditorIcon>
         <span class="caption-m">{{ settings.privateData.url }}</span>
     </div>
+ 
 </template>
 
 <script>
